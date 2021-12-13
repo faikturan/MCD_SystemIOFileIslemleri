@@ -26,7 +26,12 @@ namespace MCD_SystemIOFileIslemleri
             FileAppendText("c:\\NetworkAkademi\\merhaba.txt", "Merhaba TXT");
             string metinDegeri = FileReadAllText("c:\\NetworkAkademi\\merhaba.txt");
             Console.WriteLine(metinDegeri);
-            
+
+            //FileCopy("c:\\NetworkAkademi\\merhaba.txt", "c:\\NetworkAkademi\\merhaba2.txt");
+            //FileMove("c:\\NetworkAkademi\\merhaba2.txt", "c:\\NetworkAkademi2\\merhaba2.txt");
+
+            FileDelete("c:\\NetworkAkademi2\\merhaba2.txt");
+
 
             Console.ReadLine();
         }
@@ -37,6 +42,20 @@ namespace MCD_SystemIOFileIslemleri
             Fs.Close();
         }
 
+        static void FileDelete(string path)
+        {
+            File.Delete(path);
+        }
+
+        static void FileMove(string kaynak, string hedef)
+        {
+            File.Move(kaynak, hedef);
+        }
+
+        static void FileCopy(string kaynak, string hedef)
+        {
+            File.Copy(kaynak, hedef);
+        }
 
         static void FileAppendText(string path, string deger)
         {
