@@ -22,15 +22,24 @@ namespace MCD_SystemIOFileIslemleri
             //    FileCreate("c:\\NetworkAkademi\\merhaba.txt");
             //}
 
+           
+
+            string metinDegeri = FileReadAllText("c:\\NetworkAkademi\\merhaba.txt");
+            Console.WriteLine(metinDegeri);
+
             Console.ReadLine();
-
-
         }
 
         static void FileCreate(string path)
         {
             FileStream Fs = File.Create(path);
             Fs.Close();
+        }
+
+
+        static void FileAppendText(string path, string deger)
+        {
+            File.AppendAllText(path, deger);
         }
 
         static string FileReadAllText(string path)
